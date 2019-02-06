@@ -1,0 +1,27 @@
+{% extends 'account/homepage.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<head>
+    <title>9Art-Signup</title>
+</head>
+<style>
+    .container{
+    padding-right:300px;
+    padding-left:300px;
+    margin-top: 15px;
+    }
+</style>
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="well">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">sign up</legend>
+                {{form|crispy}}
+            </fieldset>
+            <br><button type="submit" class="btn btn-primary">Sign up</button>
+            <a href="{% url 'login' %}">Already have an account???</a>
+        </div>
+    </div>
+</form>
+{% endblock body %}

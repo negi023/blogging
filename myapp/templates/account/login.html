@@ -1,0 +1,22 @@
+{% extends 'account/homepage.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<head>
+    <title>9Art-Signup</title>
+</head>
+<h1 style="text-align:center;font-family:verdana"><b>Login</b></h1>
+<div class="container" id="loginCont">
+    <div class="well well-lg">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+                {{form|crispy}}
+            </table><br>
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{request.GET.next}}">
+            {% endif %}
+            <button type="submit" class="btn btn-primary">login</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

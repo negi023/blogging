@@ -1,0 +1,26 @@
+{% extends 'account/homepage.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<style>
+    .container{
+    padding-right:300px;
+    padding-left:300px;
+    margin-top: 15px;
+    }
+</style>
+<div>
+    <form method="POST" action="{% url 'article:update' id=article.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+            <div class="well">
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Update</legend></fieldset>
+        <table>
+            {{form|crispy}}
+        </table>
+                <br><button type="submit" class="btn btn-primary">update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock body %}

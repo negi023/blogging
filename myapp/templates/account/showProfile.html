@@ -1,0 +1,18 @@
+{% extends 'account/homepage.html' %}
+{% block body %}
+<br>
+<div class="container">
+    <div class="well well-lg">
+        <div class="content-section">
+            <div class="media">
+                <img class="rounded-circle account-img" src="{{ user.profile.dp.url }}" width="70" height="70">
+                <div class="media-body">
+                    <h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2>
+                    <p class="text-secondary">{{ user.username }}</p>
+                    <p class="text-secondary">{{ user.email }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+.navbar{
+    margin-bottom:0px;
+    border-radius:0px;
+    padding-left: 200px;
+    padding-right: 200px;
+    font-size: small;
+}
+
+.jumbotron{
+    padding-left:200px;
+    padding-right:200px;
+    height: 400px;
+}
+.well{
+    background-color:white;
+}
+
+body{
+    background-color:#f8f9fa;
+}
+
+
+.navbar-inverse{
+    background-color:#d9edf7;
+    border-color:#c7dbdcf0;
+}
+
+#loginCont{
+    padding-right:300px;
+    padding-left:300px;
+}
+
+#article_container{
+    margin-top: 15px;
+}
+
+.about{
+    font-family:Times New Roman;
+}

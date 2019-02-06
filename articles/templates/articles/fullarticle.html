@@ -1,0 +1,28 @@
+{% extends 'account/homepage.html' %}
+{% block body %}
+<style>
+    .container{
+    padding-right:150px;
+    padding-left:150px;
+    margin-top: 15px;
+    }
+</style>
+<div>
+    <br>
+    <div class="container">
+        <h2 style="font-family:Georgia;"><b>{{article.title}}</b></h2><br>
+        <h6 class="text-muted"><a style="text-decoration: none;" class="text-muted" href="#">{{article.author}}</a>, {{article.date|date:"F d, Y"}}</h6>
+        <hr>
+        {% if article.thumb %}
+        <center><img src="{{article.thumb.url}}" width="550" height="350"></center><br>
+        {% endif %}
+        <p style="font-family:Arial;font-size:large;">{{article.body}}</p>
+        {% if user.is_superuser %}
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'article:update' id=article.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'article:delete' id=article.id %}">Delete</a>
+          </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
